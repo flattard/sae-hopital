@@ -1,0 +1,2300 @@
+<?xml version="1.0"?>
+<pfsense>
+	<version>22.2</version>
+	<lastchange></lastchange>
+	<system>
+		<optimization>normal</optimization>
+		<hostname>pfSense</hostname>
+		<domain>home.arpa</domain>
+		<dnsserver></dnsserver>
+		<dnsallowoverride></dnsallowoverride>
+		<group>
+			<name>all</name>
+			<description><![CDATA[All Users]]></description>
+			<scope>system</scope>
+			<gid>1998</gid>
+			<member>0</member>
+		</group>
+		<group>
+			<name>admins</name>
+			<description><![CDATA[System Administrators]]></description>
+			<scope>system</scope>
+			<gid>1999</gid>
+			<member>0</member>
+			<priv>page-all</priv>
+		</group>
+		<user>
+			<name>admin</name>
+			<descr><![CDATA[System Administrator]]></descr>
+			<scope>system</scope>
+			<groupname>admins</groupname>
+			<sha512-hash>$6$11c32b48b6beed58$pRfzPhqaAeAxQhkz.6N4TbOeAFe9/oau7UGKzNo9iZA91fDTuUNeIcPvnyz72SpMJ4wrWMcHH9t7jY3QIQPEQ.</sha512-hash>
+			<uid>0</uid>
+			<priv>user-shell-access</priv>
+		</user>
+		<nextuid>2000</nextuid>
+		<nextgid>2000</nextgid>
+		<timeservers>2.pfsense.pool.ntp.org</timeservers>
+		<webgui>
+			<protocol>https</protocol>
+			<loginautocomplete></loginautocomplete>
+			<ssl-certref>6ac5230f3fa3e</ssl-certref>
+		</webgui>
+		<disablenatreflection>yes</disablenatreflection>
+		<disablesegmentationoffloading></disablesegmentationoffloading>
+		<disablelargereceiveoffloading></disablelargereceiveoffloading>
+		<ipv6allow></ipv6allow>
+		<maximumtableentries>400000</maximumtableentries>
+		<powerd_ac_mode>hadp</powerd_ac_mode>
+		<powerd_battery_mode>hadp</powerd_battery_mode>
+		<powerd_normal_mode>hadp</powerd_normal_mode>
+		<bogons>
+			<interval>monthly</interval>
+		</bogons>
+		<hn_altq_enable></hn_altq_enable>
+		<ssh></ssh>
+	</system>
+	<interfaces>
+		<wan>
+			<enable></enable>
+			<if>em0</if>
+			<mtu></mtu>
+			<ipaddr>dhcp</ipaddr>
+			<ipaddrv6></ipaddrv6>
+			<subnet></subnet>
+			<gateway></gateway>
+			<blockpriv></blockpriv>
+			<blockbogons></blockbogons>
+			<dhcphostname></dhcphostname>
+			<media></media>
+			<mediaopt></mediaopt>
+			<dhcp6-duid></dhcp6-duid>
+			<dhcp6-ia-pd-len>0</dhcp6-ia-pd-len>
+			<subnetv6></subnetv6>
+			<gatewayv6></gatewayv6>
+			<descr><![CDATA[WAN]]></descr>
+		</wan>
+		<lan>
+			<if>em1</if>
+			<descr><![CDATA[LAN]]></descr>
+			<spoofmac></spoofmac>
+			<enable></enable>
+		</lan>
+		<opt1>
+			<descr><![CDATA[VLAN10]]></descr>
+			<if>em1.10</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.10.252</ipaddr>
+			<subnet>24</subnet>
+		</opt1>
+		<opt2>
+			<descr><![CDATA[VLAN20]]></descr>
+			<if>em1.20</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.20.252</ipaddr>
+			<subnet>24</subnet>
+		</opt2>
+		<opt3>
+			<descr><![CDATA[VLAN30]]></descr>
+			<if>em1.30</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.30.252</ipaddr>
+			<subnet>24</subnet>
+		</opt3>
+		<opt4>
+			<descr><![CDATA[VLAN40]]></descr>
+			<if>em1.40</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.40.252</ipaddr>
+			<subnet>24</subnet>
+		</opt4>
+		<opt5>
+			<descr><![CDATA[VLAN50]]></descr>
+			<if>em1.50</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.50.252</ipaddr>
+			<subnet>24</subnet>
+		</opt5>
+		<opt6>
+			<descr><![CDATA[VLAN60]]></descr>
+			<if>em1.60</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.60.252</ipaddr>
+			<subnet>24</subnet>
+		</opt6>
+		<opt7>
+			<descr><![CDATA[VLAN70]]></descr>
+			<if>em1.70</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.70.252</ipaddr>
+			<subnet>24</subnet>
+		</opt7>
+		<opt8>
+			<descr><![CDATA[VLAN100]]></descr>
+			<if>em1.100</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>10.0.0.252</ipaddr>
+			<subnet>24</subnet>
+		</opt8>
+		<opt9>
+			<descr><![CDATA[LIEN_SYNC]]></descr>
+			<if>em2</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>172.16.1.2</ipaddr>
+			<subnet>30</subnet>
+		</opt9>
+		<opt10>
+			<descr><![CDATA[VLAN80]]></descr>
+			<if>em1.80</if>
+			<enable></enable>
+			<spoofmac></spoofmac>
+			<ipaddr>192.168.80.252</ipaddr>
+			<subnet>24</subnet>
+		</opt10>
+	</interfaces>
+	<staticroutes>
+	</staticroutes>
+	<dhcpd>
+		<lan>
+			<range>
+				<from>192.168.1.100</from>
+				<to>192.168.1.199</to>
+			</range>
+		</lan>
+	</dhcpd>
+	<dhcpdv6>
+		<lan>
+			<range>
+				<from>::1000</from>
+				<to>::2000</to>
+			</range>
+			<ramode>disabled</ramode>
+			<rapriority>medium</rapriority>
+		</lan>
+	</dhcpdv6>
+	<snmpd>
+		<syslocation></syslocation>
+		<syscontact></syscontact>
+		<rocommunity>public</rocommunity>
+	</snmpd>
+	<diag>
+		<ipv6nat>
+			<ipaddr></ipaddr>
+		</ipv6nat>
+	</diag>
+	<syslog>
+		<filterdescriptions>1</filterdescriptions>
+	</syslog>
+	<nat>
+		<outbound>
+			<mode>automatic</mode>
+		</outbound>
+	</nat>
+	<filter>
+		<rule>
+			<id></id>
+			<tracker>1791305973</tracker>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all &agrave; enlever]]></descr>
+			<created>
+				<time>1791305973</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791307014</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791305985</tracker>
+			<type>pass</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<address>192.168.80.0/24</address>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr></descr>
+			<created>
+				<time>1791305985</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791316371</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<ipprotocol>inet</ipprotocol>
+			<descr><![CDATA[Default allow LAN to any rule]]></descr>
+			<interface>lan</interface>
+			<tracker>0100000101</tracker>
+			<source>
+				<network>lan</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<ipprotocol>inet6</ipprotocol>
+			<descr><![CDATA[Default allow LAN IPv6 to any rule]]></descr>
+			<interface>lan</interface>
+			<tracker>0100000102</tracker>
+			<source>
+				<network>lan</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791316363</tracker>
+			<type>pass</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all &agrave; enlever]]></descr>
+			<updated>
+				<time>1791316363</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791316363</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318401</tracker>
+			<type>pass</type>
+			<interface>opt1</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt1</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791318401</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791366858</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791364193</tracker>
+			<type>pass</type>
+			<interface>opt1</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt1</network>
+			</source>
+			<destination>
+				<address>10.0.0.8</address>
+			</destination>
+			<descr><![CDATA[Pass VoIP]]></descr>
+			<created>
+				<time>1791364193</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791366866</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318438</tracker>
+			<type>pass</type>
+			<interface>opt1</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt1</network>
+			</source>
+			<destination>
+				<address>10.0.0.6</address>
+			</destination>
+			<descr><![CDATA[Pass DPI]]></descr>
+			<created>
+				<time>1791318438</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791366874</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318534</tracker>
+			<type>block</type>
+			<interface>opt1</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt1</network>
+			</source>
+			<destination>
+				<address>network_vlan_100</address>
+			</destination>
+			<descr><![CDATA[Block SRV]]></descr>
+			<created>
+				<time>1791318534</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791370207</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318490</tracker>
+			<type>pass</type>
+			<interface>opt1</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt1</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+				<not></not>
+			</destination>
+			<descr><![CDATA[Acc&egrave;s internet]]></descr>
+			<created>
+				<time>1791318490</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367297</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362765</tracker>
+			<type>pass</type>
+			<interface>opt1</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362765</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362765</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363706</tracker>
+			<type>pass</type>
+			<interface>opt2</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt2</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791363706</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367341</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318937</tracker>
+			<type>pass</type>
+			<interface>opt2</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>udp</protocol>
+			<source>
+				<network>opt2</network>
+			</source>
+			<destination>
+				<any></any>
+				<port>67-68</port>
+			</destination>
+			<disabled></disabled>
+			<descr><![CDATA[dhcp relay]]></descr>
+			<created>
+				<time>1791318937</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367362</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791319135</tracker>
+			<type>pass</type>
+			<interface>opt2</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt2</network>
+			</source>
+			<destination>
+				<address>10.0.0.1/24</address>
+				<port>53</port>
+			</destination>
+			<disabled></disabled>
+			<descr><![CDATA[dns]]></descr>
+			<created>
+				<time>1791319135</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367350</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791319432</tracker>
+			<type>block</type>
+			<interface>opt2</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt2</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[isolation totale]]></descr>
+			<created>
+				<time>1791319432</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791370305</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362780</tracker>
+			<type>pass</type>
+			<interface>opt2</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362780</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362780</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363723</tracker>
+			<type>pass</type>
+			<interface>opt3</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt3</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791363723</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367394</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791364627</tracker>
+			<type>pass</type>
+			<interface>opt3</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt3</network>
+			</source>
+			<destination>
+				<address>10.0.0.8</address>
+			</destination>
+			<descr><![CDATA[Pass VoIP]]></descr>
+			<created>
+				<time>1791364627</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367400</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791319810</tracker>
+			<type>pass</type>
+			<interface>opt3</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt3</network>
+			</source>
+			<destination>
+				<address>10.0.0.7</address>
+			</destination>
+			<descr><![CDATA[Pass GAP]]></descr>
+			<created>
+				<time>1791319810</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367408</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791364848</tracker>
+			<type>block</type>
+			<interface>opt3</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt3</network>
+			</source>
+			<destination>
+				<address>network_vlan_100</address>
+			</destination>
+			<descr><![CDATA[Block SRV]]></descr>
+			<created>
+				<time>1791364848</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791370658</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791364869</tracker>
+			<type>pass</type>
+			<interface>opt3</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt3</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+				<not></not>
+			</destination>
+			<descr><![CDATA[Acc&egrave;s internet]]></descr>
+			<created>
+				<time>1791364869</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367419</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362789</tracker>
+			<type>pass</type>
+			<interface>opt3</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362789</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362789</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363734</tracker>
+			<type>pass</type>
+			<interface>opt4</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt4</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791363734</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367435</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365241</tracker>
+			<type>pass</type>
+			<interface>opt4</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt4</network>
+			</source>
+			<destination>
+				<address>10.0.0.8</address>
+			</destination>
+			<descr><![CDATA[Pass VoIP]]></descr>
+			<created>
+				<time>1791365241</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367447</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791320059</tracker>
+			<type>pass</type>
+			<interface>opt4</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt4</network>
+			</source>
+			<destination>
+				<address>IPs_DPI_GAP</address>
+			</destination>
+			<descr><![CDATA[Pass DPI+GAP]]></descr>
+			<created>
+				<time>1791320059</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367442</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365220</tracker>
+			<type>block</type>
+			<interface>opt4</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt4</network>
+			</source>
+			<destination>
+				<address>network_vlan_100</address>
+			</destination>
+			<descr><![CDATA[Block SRV]]></descr>
+			<created>
+				<time>1791365220</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791370678</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365277</tracker>
+			<type>pass</type>
+			<interface>opt4</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt4</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+				<not></not>
+			</destination>
+			<descr><![CDATA[Acc&egrave;s internet]]></descr>
+			<created>
+				<time>1791365277</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367461</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362804</tracker>
+			<type>pass</type>
+			<interface>opt4</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362804</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362804</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363747</tracker>
+			<type>pass</type>
+			<interface>opt5</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt5</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791363747</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367473</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365371</tracker>
+			<type>pass</type>
+			<interface>opt5</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt5</network>
+			</source>
+			<destination>
+				<address>10.0.0.8</address>
+			</destination>
+			<descr><![CDATA[Pass VoIP]]></descr>
+			<created>
+				<time>1791365372</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367479</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365453</tracker>
+			<type>block</type>
+			<interface>opt5</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt5</network>
+			</source>
+			<destination>
+				<address>network_vlan_100</address>
+			</destination>
+			<descr><![CDATA[Block SRV]]></descr>
+			<created>
+				<time>1791365453</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791370687</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365465</tracker>
+			<type>pass</type>
+			<interface>opt5</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt5</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+				<not></not>
+			</destination>
+			<descr><![CDATA[Acc&egrave;s internet]]></descr>
+			<created>
+				<time>1791365465</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367495</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362832</tracker>
+			<type>pass</type>
+			<interface>opt5</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362832</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362832</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363773</tracker>
+			<type>pass</type>
+			<interface>opt6</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt6</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791363773</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367533</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791320413</tracker>
+			<type>pass</type>
+			<interface>opt6</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt6</network>
+			</source>
+			<destination>
+				<address>10.0.0.5</address>
+			</destination>
+			<descr><![CDATA[Pass Secu]]></descr>
+			<created>
+				<time>1791320413</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367540</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365732</tracker>
+			<type>block</type>
+			<interface>opt6</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt6</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[Block SRV]]></descr>
+			<created>
+				<time>1791365732</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791370970</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362842</tracker>
+			<type>pass</type>
+			<interface>opt6</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362842</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362842</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363791</tracker>
+			<type>pass</type>
+			<interface>opt7</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt7</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD &agrave; remplacer par DNS/DHCP pfSense]]></descr>
+			<created>
+				<time>1791363791</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367562</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365900</tracker>
+			<type>block</type>
+			<interface>opt7</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt7</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+			</destination>
+			<descr><![CDATA[Isoler]]></descr>
+			<created>
+				<time>1791365900</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367983</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791365911</tracker>
+			<type>pass</type>
+			<interface>opt7</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt7</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+				<not></not>
+			</destination>
+			<descr><![CDATA[Acc&egrave;s internet]]></descr>
+			<created>
+				<time>1791365911</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367601</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791320694</tracker>
+			<type>pass</type>
+			<interface>opt7</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<address>192.168.70.0/24</address>
+			</source>
+			<destination>
+				<any></any>
+				<port>53</port>
+			</destination>
+			<descr><![CDATA[dns public &agrave; remplacer par dns forwarder/resolver]]></descr>
+			<created>
+				<time>1791320694</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791320791</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362851</tracker>
+			<type>pass</type>
+			<interface>opt7</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362851</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362851</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791363817</tracker>
+			<type>pass</type>
+			<interface>opt8</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp/udp</protocol>
+			<source>
+				<network>opt8</network>
+			</source>
+			<destination>
+				<address>10.0.0.1</address>
+			</destination>
+			<descr><![CDATA[Pass AD]]></descr>
+			<created>
+				<time>1791363817</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791367723</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318017</tracker>
+			<type>pass</type>
+			<interface>opt8</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>udp</protocol>
+			<source>
+				<address>10.0.0.8/24</address>
+			</source>
+			<destination>
+				<address>192.168.50.0/24</address>
+			</destination>
+			<descr><![CDATA[VoIP]]></descr>
+			<created>
+				<time>1791318017</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791318194</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318187</tracker>
+			<type>pass</type>
+			<interface>opt8</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<address>10.0.0.4/24</address>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[Supervision]]></descr>
+			<updated>
+				<time>1791318187</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791318187</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791317570</tracker>
+			<type>pass</type>
+			<interface>opt8</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt8</network>
+			</source>
+			<destination>
+				<address>RFC1918</address>
+				<not></not>
+			</destination>
+			<descr><![CDATA[Acc&egrave;s internet]]></descr>
+			<created>
+				<time>1791317570</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791371272</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791318310</tracker>
+			<type>block</type>
+			<interface>opt8</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<network>opt8</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[block serveurs -&gt; clients/other VLANs]]></descr>
+			<created>
+				<time>1791318310</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791371317</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791362863</tracker>
+			<type>pass</type>
+			<interface>opt8</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all]]></descr>
+			<updated>
+				<time>1791362863</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791362863</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791315795</tracker>
+			<type>pass</type>
+			<interface>opt9</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>pfsync</protocol>
+			<source>
+				<address>IPs_sync_pfSense</address>
+			</source>
+			<destination>
+				<address>IPs_sync_pfSense</address>
+			</destination>
+			<descr></descr>
+			<created>
+				<time>1791315795</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791362011</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791315864</tracker>
+			<type>pass</type>
+			<interface>opt9</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>tcp</protocol>
+			<source>
+				<address>IPs_sync_pfSense</address>
+			</source>
+			<destination>
+				<address>IPs_sync_pfSense</address>
+				<port>443</port>
+			</destination>
+			<descr></descr>
+			<created>
+				<time>1791315864</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791362078</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791315904</tracker>
+			<type>pass</type>
+			<interface>opt9</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>icmp</protocol>
+			<icmptype>any</icmptype>
+			<source>
+				<address>IPs_sync_pfSense</address>
+			</source>
+			<destination>
+				<address>IPs_sync_pfSense</address>
+			</destination>
+			<descr></descr>
+			<created>
+				<time>1791315904</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791362038</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791315237</tracker>
+			<type>pass</type>
+			<interface>opt9</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr><![CDATA[pass all &agrave; enlever]]></descr>
+			<created>
+				<time>1791315237</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+			<updated>
+				<time>1791316296</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<disabled></disabled>
+		</rule>
+		<rule>
+			<id></id>
+			<tracker>1791457262</tracker>
+			<type>pass</type>
+			<interface>opt10</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+			<descr></descr>
+			<updated>
+				<time>1791457262</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1791457262</time>
+				<username><![CDATA[admin@192.168.80.10 (Local Database)]]></username>
+			</created>
+		</rule>
+		<separator>
+			<opt9></opt9>
+			<opt1></opt1>
+			<lan></lan>
+			<opt8></opt8>
+			<opt2></opt2>
+			<opt6></opt6>
+			<opt7></opt7>
+			<opt4></opt4>
+			<opt3></opt3>
+			<opt5></opt5>
+		</separator>
+	</filter>
+	<ipsec>
+		<client></client>
+	</ipsec>
+	<proxyarp></proxyarp>
+	<cron>
+		<item>
+			<minute>*/1</minute>
+			<hour>*</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/sbin/newsyslog</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>3</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/etc/rc.periodic daily</command>
+		</item>
+		<item>
+			<minute>15</minute>
+			<hour>4</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>6</wday>
+			<who>root</who>
+			<command>/etc/rc.periodic weekly</command>
+		</item>
+		<item>
+			<minute>30</minute>
+			<hour>5</hour>
+			<mday>1</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/etc/rc.periodic monthly</command>
+		</item>
+		<item>
+			<minute>1,31</minute>
+			<hour>0-5</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 adjkerntz -a</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>3</hour>
+			<mday>1</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.update_bogons.sh</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>1</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.dyndns.update</command>
+		</item>
+		<item>
+			<minute>*/60</minute>
+			<hour>*</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /usr/local/sbin/expiretable -v -t 3600 virusprot</command>
+		</item>
+		<item>
+			<minute>30</minute>
+			<hour>12</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.update_urltables</command>
+		</item>
+		<item>
+			<minute>1</minute>
+			<hour>0</hour>
+			<mday>*</mday>
+			<month>*</month>
+			<wday>*</wday>
+			<who>root</who>
+			<command>/usr/bin/nice -n20 /etc/rc.update_pkg_metadata</command>
+		</item>
+	</cron>
+	<rrd>
+		<enable></enable>
+	</rrd>
+	<widgets>
+		<sequence>system_information:col1:show,disks:col1:show,netgate_services_and_support:col2:show,interfaces:col2:show</sequence>
+		<period>10</period>
+	</widgets>
+	<unbound>
+		<enable></enable>
+		<dnssec></dnssec>
+		<active_interface></active_interface>
+		<outgoing_interface></outgoing_interface>
+		<custom_options></custom_options>
+		<hideidentity></hideidentity>
+		<hideversion></hideversion>
+		<dnssecstripped></dnssecstripped>
+	</unbound>
+	<vlans>
+		<vlan>
+			<if>em1</if>
+			<tag>10</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN M&eacute;dical]]></descr>
+			<vlanif>em1.10</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>20</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Biomed]]></descr>
+			<vlanif>em1.20</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>30</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Administratif]]></descr>
+			<vlanif>em1.30</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>40</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Direction]]></descr>
+			<vlanif>em1.40</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>50</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN VoIP]]></descr>
+			<vlanif>em1.50</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>60</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Security]]></descr>
+			<vlanif>em1.60</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>70</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Invit&eacute;s]]></descr>
+			<vlanif>em1.70</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>80</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Management]]></descr>
+			<vlanif>em1.80</vlanif>
+		</vlan>
+		<vlan>
+			<if>em1</if>
+			<tag>100</tag>
+			<pcp></pcp>
+			<descr><![CDATA[VLAN Serveurs]]></descr>
+			<vlanif>em1.100</vlanif>
+		</vlan>
+	</vlans>
+	<qinqs></qinqs>
+	<gateways>
+	</gateways>
+	<dnsmasq></dnsmasq>
+	<ntpd></ntpd>
+	<cert>
+		<refid>6ac5230f3fa3e</refid>
+		<descr><![CDATA[webConfigurator default (6ac5230f3fa3e)]]></descr>
+		<type>server</type>
+		<crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVsRENDQTN5Z0F3SUJBZ0lJUlFGWlhwN1MyaWt3RFFZSktvWklodmNOQVFFTEJRQXdXakU0TURZR0ExVUUKQ2hNdmNHWlRaVzV6WlNCM1pXSkRiMjVtYVdkMWNtRjBiM0lnVTJWc1ppMVRhV2R1WldRZ1EyVnlkR2xtYVdOaApkR1V4SGpBY0JnTlZCQU1URlhCbVUyVnVjMlV0Tm1Gak5USXpNR1l6Wm1FelpUQWVGdzB5TmpFd01EWXhOak0wCk1qTmFGdzB5TnpFeE1EZ3hOak0wTWpOYU1Gb3hPREEyQmdOVkJBb1RMM0JtVTJWdWMyVWdkMlZpUTI5dVptbG4KZFhKaGRHOXlJRk5sYkdZdFUybG5ibVZrSUVObGNuUnBabWxqWVhSbE1SNHdIQVlEVlFRREV4VndabE5sYm5ObApMVFpoWXpVeU16Qm1NMlpoTTJVd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURkCk9sRGNYYjk1QkY4dElOa280ckJseENnakJ2aFFwUTlJV3pLdFBXSVAyWUgzeGljdXFHdDh2dC9UaEJTdHV6WUsKMWJVeUt1TjF1cU1jODh0Z0ZrbGxtUDFBaUcrdENQVDFNTDl0bkE1ektrSEJHU2piWmVSOU5yMHhJeXdudjQ3VApTaHVsOEpGUDlQVzRvS2RyNElicWhMYW9Fd21JbjVFMERBVVFmWnE4ZTh3OXExL0EvTERJSVNscFJtUjloT01tCnFzWExVL296ZUZjUEIrT0FLUkhIZ0N2eFN3R0R4SkZ4aFZMNGJsTnJBL1lTOVNSNGR0T3huYndVdWRWMWtPemoKSVE0blBqVk4rYzZpZkJ1dFl5QVd5cGZxaWF3WGJMLy9FUGdhckJ5S1JzZE9XSUhzbDMxano3Z1dHT3hZRmozcApyMGRXZldRTkt6S1RINkdhNCthNUFnTUJBQUdqZ2dGY01JSUJXREFKQmdOVkhSTUVBakFBTUJFR0NXQ0dTQUdHCitFSUJBUVFFQXdJR1FEQUxCZ05WSFE4RUJBTUNCYUF3TXdZSllJWklBWWI0UWdFTkJDWVdKRTl3Wlc1VFUwd2cKUjJWdVpYSmhkR1ZrSUZObGNuWmxjaUJEWlhKMGFXWnBZMkYwWlRBZEJnTlZIUTRFRmdRVWV1OXhVRjM3dWw0bwpzNzMrbXZjYkdjK2NoamN3Z1lzR0ExVWRJd1NCZ3pDQmdJQVVldTl4VUYzN3VsNG9zNzMrbXZjYkdjK2NoamVoClhxUmNNRm94T0RBMkJnTlZCQW9UTDNCbVUyVnVjMlVnZDJWaVEyOXVabWxuZFhKaGRHOXlJRk5sYkdZdFUybG4KYm1Wa0lFTmxjblJwWm1sallYUmxNUjR3SEFZRFZRUURFeFZ3WmxObGJuTmxMVFpoWXpVeU16Qm1NMlpoTTJXQwpDRVVCV1Y2ZTB0b3BNQ2NHQTFVZEpRUWdNQjRHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWNEQWdZSUt3WUJCUVVJCkFnSXdJQVlEVlIwUkJCa3dGNElWY0daVFpXNXpaUzAyWVdNMU1qTXdaak5tWVRObE1BMEdDU3FHU0liM0RRRUIKQ3dVQUE0SUJBUURhMEVSaU9xa2E5UWJhYnpIOHVLZDAxc3Z4QmIwc3Jlek5iMnAzcDhFd3lVcUlmMGdTMlc1VQpPdnkvM0ZHZlpXTWpqU1cxUloxdktpaVVON2Nzc1lwMWdzalVtMWp6UkVqUUNITkpra0Y2WHpNVFV5K2FEZmpMCmRpT2s3Wk4rTTNCWnVxMGNnZVljelUySHV5dG1IRHY3ZEhPVmJuNmtMeXd4VUpYK1R1TnIxNFJBNXZLdlV5OTAKeEVjL3NpSEh4ZU9jN0Z6MVlHZWVGUkxlZDE3dHkvdnpVS0JITzM5SDVJUlhMc2VEaE4xamh3SG9PQklCMndBLwpVWnlzZFJnRmFtRXIraVgxNnZwSTZNU1QwTE9SR3lmZEpqTDlmZFFsa09zRUxrbVprMHpObGg4b3NKNlMrdFp3ClJySGc3UUxORU40cS9zanBJdjh2Znk5Tkp2MzFJWFhICi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</crt>
+		<prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRGRPbERjWGI5NUJGOHQKSU5rbzRyQmx4Q2dqQnZoUXBROUlXekt0UFdJUDJZSDN4aWN1cUd0OHZ0L1RoQlN0dXpZSzFiVXlLdU4xdXFNYwo4OHRnRmtsbG1QMUFpRyt0Q1BUMU1MOXRuQTV6S2tIQkdTamJaZVI5TnIweEl5d252NDdUU2h1bDhKRlA5UFc0Cm9LZHI0SWJxaExhb0V3bUluNUUwREFVUWZacThlOHc5cTEvQS9MRElJU2xwUm1SOWhPTW1xc1hMVS9vemVGY1AKQitPQUtSSEhnQ3Z4U3dHRHhKRnhoVkw0YmxOckEvWVM5U1I0ZHRPeG5id1V1ZFYxa096aklRNG5QalZOK2M2aQpmQnV0WXlBV3lwZnFpYXdYYkwvL0VQZ2FyQnlLUnNkT1dJSHNsMzFqejdnV0dPeFlGajNwcjBkV2ZXUU5LektUCkg2R2E0K2E1QWdNQkFBRUNnZ0VBVTFPODAxUW9ZNy9HemF1NndCQ3FtcHBJOS9DUEpXa1dtWTFvU0NKL3hqS0sKSnJhbldZYXNmZDh6Vld0QmtyS2FSM2g1ZUh6NUVnWUxuRU1qem54Mmh1TWFPTzFyQ3dUOXAwRUdTWlhuUjIrYQpOczV3T2p0bDFkZ0JhUG16andFekhkaWpFMXpLanhCWVlZTjVyRU4wN2U2eEVodWhrcWx2dXVmd0hHY0RHb3pmCkxjSnNvOUZOQlJhMHIwODNETVlmN2Fta0hHT3VGMUx4eEpLWFJaNld3ZWZIbGs0cU9XcUxYM3BtT0VzZnZueTAKaGR1NWlFMVJtalE3V2RQSEFEZUdiMlo5aXhmM0RCTHRwVklTTmxqbVZGa0FmQURoRUZRek1USldLQlZvcVhlYwpWNW4zMHdjUlpFRDU3UzlwSTdVZFRxY0dLMm9CZjc3Q1lqQm1scVA2Z1FLQmdRRDhEQkh4aXlUb0daMWIxeHQ4CkVlUndvRGI3L0kzSzYydXNtNytCakYwT0dHWFAyTDQwTjAvMFlCUHFhckZONnhBcyt5YThBRDVrZkpvTkNEYXIKbGwyODhHb2ZyOHBvREdxNFN0ZXlGQWtpVGU2SHEwWGJTK1VPT0ZYZlJrY0t5V1NvZ1VBaDh6eEYzMU90SFUzVgpGaXN0Q0FUbVVpU2t5VnkyTkZneFB5ZlBhUUtCZ1FEZ3NvTEpoWVY1UFFLK0M4RWZrbDZvcnR4anBWc2FQK3NpCjhSaVRVSVhGR2l5d293QkRkTDk3U21hdGl1U3JEUVVWYlBlNGhVSUhQRlo2T3Y0TUk2UVRYZ2Z5b1NzVXlENDYKNVhsMlJ5eFZKNm96K1ZvNTFtQUN4d2xYREtFTHFzcDZKM2p1aWluQk9lKzBmK0RRWkxyYzUvZXNaWmN6UU1hUwpXS0dwTGNiQzBRS0JnQkNwQzVhWHgveS9sTE01YU11dXN4YnV3RE92NGYrRHlENUVuVWdHNnkrL1ZSdUVEQzZQCmFXMlIzRDhtaGtuTU8rbDlRSFkwM2VydWdaQlM5cW9vNmxGTzR2VHRQY2ZhNmtMOFQzMnA3V0NqSGgxQnFRQngKNTlZa3l5aFRFT2Nab05teWtYYXRDVkxsRERicE5QZmMyMFhDdmZBcmhkaU9wdDQwWDVBQnlMUGhBb0dCQU5NKwpZQUR2VzIyQXMweFNKcXowNGJNNk9ZNGd6Z1plbzBRRlgvSlhHSHdXUUgrTHJ0cThMcXpOWkx5d3dJd2pRRzFGCk5ac3ZCTVZpcjNaWWNiQ2Q3VW9iOCtMaUxHdHNXanpxc2dkRm9HTXFXRFJtcjdHQ1hsOGVHaVRSaGJJL1RmNEwKa0FES3ViaWtMRHdJb1NXcUhaZERLYkRWRFpJc3lzS1pPdHFmWTZhUkFvR0JBTDkwZG9uLzg2NVRJUU5XSldOVApqMkJHRmtqUWRNQkZTM3E2VU5OSUFaVy9EUndMQ0puYTg2R2pGWXoyUjh3ZGEyZ3hvcjl2cGJHVld5Yk5hcHo4CkozSUpGNS84Si9XS0R1ai9zcXMvRU5OTUkyNWhTdk1Tbm9DNnZVbVhWZzNteXFkRWFwZkNzUS9BSUQ2a0xTVUEKbDBmL3dMWWtCM295QldsWDdEUFA0SVZCCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K</prv>
+	</cert>
+	<revision>
+		<time>1791459589</time>
+		<description><![CDATA[admin@192.168.80.2 (Local Database): Interfaces settings changed]]></description>
+		<username><![CDATA[admin@192.168.80.2 (Local Database)]]></username>
+	</revision>
+	<hasync>
+		<pfsyncenabled>on</pfsyncenabled>
+		<pfsyncpeerip>172.16.1.1</pfsyncpeerip>
+		<pfsyncinterface>opt9</pfsyncinterface>
+		<synchronizetoip></synchronizetoip>
+		<username></username>
+		<password></password>
+		<adminsync>on</adminsync>
+	</hasync>
+	<virtualip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt1</interface>
+			<vhid>10</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac5331c45439</uniqid>
+			<descr><![CDATA[CARP VLAN M&eacute;dical]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.10.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt2</interface>
+			<vhid>20</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac53349afec0</uniqid>
+			<descr><![CDATA[CARP VLAN Biomed]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.20.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt3</interface>
+			<vhid>30</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac533662a7e6</uniqid>
+			<descr><![CDATA[CARP VLAN Administratif]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.30.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt4</interface>
+			<vhid>40</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac533904a378</uniqid>
+			<descr><![CDATA[CARP VLAN Direction]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.40.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt5</interface>
+			<vhid>50</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac533bedb79a</uniqid>
+			<descr><![CDATA[CARP VLAN VoIP]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.50.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt6</interface>
+			<vhid>60</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac533fe7437b</uniqid>
+			<descr><![CDATA[CARP VLAN Security]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.60.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt7</interface>
+			<vhid>70</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac5342981038</uniqid>
+			<descr><![CDATA[CARP VLAN Invit&eacute;s]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.70.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt10</interface>
+			<vhid>80</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac53472d50dc</uniqid>
+			<descr><![CDATA[CARP VLAN Management]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>192.168.80.254</subnet>
+		</vip>
+		<vip>
+			<mode>carp</mode>
+			<interface>opt8</interface>
+			<vhid>100</vhid>
+			<advskew>100</advskew>
+			<advbase>1</advbase>
+			<password><![CDATA[pfsense]]></password>
+			<uniqid>6ac53873927d0</uniqid>
+			<descr><![CDATA[CARP VLAN Serveurs]]></descr>
+			<type>single</type>
+			<subnet_bits>24</subnet_bits>
+			<subnet>10.0.0.254</subnet>
+		</vip>
+	</virtualip>
+	<ppps>
+	</ppps>
+	<aliases>
+		<alias>
+			<name>IPs_DPI_GAP</name>
+			<type>host</type>
+			<address>10.0.0.6 10.0.0.7</address>
+			<descr></descr>
+			<detail><![CDATA[DPI||GAP]]></detail>
+		</alias>
+		<alias>
+			<name>IPs_sync_pfSense</name>
+			<type>host</type>
+			<address>172.16.1.1 172.16.1.2</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:22:20 +0000||Entry added Wed, 07 Oct 2026 08:22:20 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan10</name>
+			<type>network</type>
+			<address>192.168.10.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:38:40 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan20</name>
+			<type>network</type>
+			<address>192.168.20.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:40:41 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan30</name>
+			<type>network</type>
+			<address>192.168.30.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:41:23 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan40</name>
+			<type>network</type>
+			<address>192.168.40.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:41:46 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan50</name>
+			<type>network</type>
+			<address>192.168.50.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:42:03 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan60</name>
+			<type>network</type>
+			<address>192.168.60.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:42:25 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan70</name>
+			<type>network</type>
+			<address>192.168.70.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:42:37 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan80</name>
+			<type>network</type>
+			<address>192.168.80.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:42:48 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>network_vlan_100</name>
+			<type>network</type>
+			<address>10.0.0.0/24</address>
+			<descr></descr>
+			<detail><![CDATA[Entry added Wed, 07 Oct 2026 08:39:37 +0000]]></detail>
+		</alias>
+		<alias>
+			<name>RFC1918</name>
+			<type>network</type>
+			<address>10.0.0.0/8 172.16.0.0/12 192.168.0.0/16</address>
+			<descr><![CDATA[plagues_ips_priv&eacute;es]]></descr>
+			<detail><![CDATA[classe A||classe B||classe C]]></detail>
+		</alias>
+	</aliases>
+	<sysctl></sysctl>
+</pfsense>
